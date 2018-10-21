@@ -7,10 +7,15 @@ using System.Web.Mvc;
 
 namespace SimpleCrud.Controllers
 {
-    public class PersonController : Controller
+    public class PersonController : BaseController
     {
-        private readonly IPersonRepository _repository = new PersonRepository();
-        private readonly IValidator<AddUserModel> _addUserValidator = new AddUserModelValidator();
+        private readonly IPersonRepository _repository;
+
+        public PersonController(IPersonRepository repository)
+        {
+            _repository = repository;
+           
+        }
 
         public ActionResult Index()
         {
@@ -42,13 +47,8 @@ namespace SimpleCrud.Controllers
         [HttpPost]
         public ActionResult Add(AddUserModel user)
         {
-           var validateResult = _addUserValidator.Validate(user);
-
-           foreach(var res in validateResult)
-            {
-                ModelState.AddModelError(res.Key, res.Message);
-            }
-
+            Validate(user);
+          
             if (ModelState.IsValid)
             {
                 _repository.Add(user);
