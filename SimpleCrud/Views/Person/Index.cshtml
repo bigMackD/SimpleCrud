@@ -1,0 +1,30 @@
+﻿@model IList<SimpleCrud.Models.UserModel>
+
+<a href="@Url.Action("Add")" class="btn btn-primary">Add</a>
+
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <th>
+                Name Surname
+            </th>
+            <th>
+                Age
+            </th>
+            <th>
+                Is active?
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var user in Model)
+        {
+            <tr>
+                <td><a href="@Url.Action("Edit",new { user.Id })">@user.FullName</td>
+                <td>@user.Age </td>
+                <td>@user.IsActiveAsString</td>
+                <td><a href="@Url.Action("Delete", new { user.Id })" class="btn btn-danger">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
