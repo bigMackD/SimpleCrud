@@ -19,12 +19,12 @@
     <tbody>
         @foreach(var user in Model)
         {
-            <tr>
-                <td><a href="@Url.Action("Edit",new { user.Id })">@user.FullName</td>
-                <td>@user.Age </td>
-                <td>@user.IsActiveAsString</td>
-                <td><a href="@Url.Action("Delete", new { user.Id })" class="btn btn-danger">Delete</a></td>
-            </tr>
+        <tr>
+            <td><a href="@Url.Action("Edit",new { user.Id })">@user.FullName</td>
+            <td>@user.Age </td>
+            <td>@user.IsActiveAsString</td>
+            <td><a href="@Url.Action("Delete", new { user.Id })" class="btn btn-danger">Delete</a></td>
+        </tr>
         }
     </tbody>
 </table>
