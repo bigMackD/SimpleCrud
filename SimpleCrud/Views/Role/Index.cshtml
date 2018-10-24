@@ -1,0 +1,28 @@
+﻿@model IList<SimpleCrud.Models.RoleModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var role in Model)
+        {
+            <tr>
+                <td>@role.RoleType</td>
+                <td> <a href="@Url.Action("Delete", new { role.Id })" class="btn btn-danger">Delete</a></td>
+            </tr>
+
+        }
+    </tbody>
+
+</table>
+<a href="@Url.Action("Add")" class="btn btn-primary">Add</a>

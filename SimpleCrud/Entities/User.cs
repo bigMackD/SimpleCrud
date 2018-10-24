@@ -11,5 +11,7 @@ namespace SimpleCrud.Entities
         public DateTime DateOfBirth { get; set; }
 
         public bool IsActive { get; set; }
+
+        public Role Role { get; set; }
     }
 }

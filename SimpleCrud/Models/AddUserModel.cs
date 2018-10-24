@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimpleCrud.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -18,5 +19,7 @@ namespace SimpleCrud.Models
 
         [DataType(DataType.Date)]
         public DateTime DateOfBirth { get; set; }
+
+        public Role Role { get; set; }
     }
 }

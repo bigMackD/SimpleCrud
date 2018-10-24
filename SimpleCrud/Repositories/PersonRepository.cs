@@ -25,6 +25,7 @@ namespace SimpleCrud.Repositories
                 LastName = userModel.LastName,
                 DateOfBirth = userModel.DateOfBirth,
                 IsActive = true,
+                Role = userModel.Role
             };
             _users.Add(user);
         }
@@ -65,7 +66,7 @@ namespace SimpleCrud.Repositories
 
             userToUpdate.FirstName = user.FirstName;
             userToUpdate.LastName = user.LastName;
-
+            userToUpdate.Role = user.Role;
             userToUpdate.IsActive = user.IsActive;
         }
 

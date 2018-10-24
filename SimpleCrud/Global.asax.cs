@@ -29,8 +29,12 @@ namespace SimpleCrud
         {
             kernel.Bind<IValidator<EditUserModel>>().To<EditUserModelValidator>();
             kernel.Bind<IValidator<AddUserModel>>().To<AddUserModelValidator>();
+
             kernel.Bind<PersonController>().To<PersonController>();
             kernel.Bind<IPersonRepository>().To<PersonRepository>();
+
+            kernel.Bind<RoleController>().To<RoleController>();
+            kernel.Bind<IRolesRepository>().To<RolesRepository>();
         }
     }
 }

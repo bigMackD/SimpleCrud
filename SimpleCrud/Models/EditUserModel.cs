@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimpleCrud.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -19,5 +20,7 @@ namespace SimpleCrud.Models
         public string LastName { get; set; }
        
         public bool IsActive { get; set; }
+
+        public Role Role { get; set; }
     }
 }
